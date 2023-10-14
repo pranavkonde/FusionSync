@@ -1,47 +1,77 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const employeeSchema = new Schema({
-    emailId : {
-        type : String,
-        required : true,
-        unique: true
+const employeeSchema = new Schema(
+  {
+    shopId: {
+      type: String,
     },
-    password : {
-        type: String,
-        required: true,
+    empId: {
+      type: Number,
+      default: 23240,
     },
-    fullName : {
-        type : Number,
-        required : true,
-        unique: true
+    emailId: {
+      type: String,
+      required: true,
+      unique: true,
     },
-    role :{
-        type : String,
-        required : true
+    password: {
+      type: String,
+      required: true,
     },
-    dateOfJoining :{
-        type : String,
-        required : true
+    firstName: {
+      type: String,
+      require: true,
+    },
+    lastName: {
+      type: String,
+    },
+    contactDetails: {
+      type: Number,
+    },
+    gender: {
+      typr: String,
+    },
+    role: {
+      type: String,
+      required: true,
     },
     panCard: {
-        type: String,
-        required: true,
+      type: String,
     },
-    category: {
-        type: String,
-        required: true,
+    address: {
+      type: String,
     },
-    employeeCount: {
+    dob: {
+      type: Date,
+    },
+    dateOfJoining: {
+      type: Date,
+    },
+    fatherName: {
+      type: String,
+    },
+    bankDetails: {
+      accNumber: {
         type: Number,
-        default: false,
-        required: true,
+      },
+      accHolderName: {
+        type: String,
+      },
+      bankIFSC: {
+        type: String,
+      },
     },
-},
-{
-    timestamps : true
-});
+    aadharCard: {
+      type: Number,
+    },
+    department: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports = mongoose.model('employee',employeeSchema);
-
-
+module.exports = mongoose.model("employee", employeeSchema);
